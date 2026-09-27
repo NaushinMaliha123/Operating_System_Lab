@@ -1,0 +1,254 @@
+welcome to Tiasha's OS
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// void createFile()
+// {
+//     char filename[100];
+//     FILE *fp;
+
+//     printf("Enter file name: ");
+//     scanf("%s", filename);
+
+//     fp = fopen(filename, "wb");
+
+//     if(fp == NULL)
+//     {
+//         printf("Error creating file!\n");
+//         return;
+//     }
+
+//     fclose(fp);
+//     printf("File created successfully.\n");
+// }
+
+// void writeFile()
+// {
+//     char filename[100];
+//     char data[1000];
+//     FILE *fp;
+
+//     printf("Enter file name: ");
+//     scanf("%s", filename);
+
+//     fp = fopen(filename, "ab");
+
+//     if(fp == NULL)
+//     {
+//         printf("File not found!\n");
+//         return;
+//     }
+
+//     getchar();
+
+//     printf("Enter data: ");
+//     fgets(data, sizeof(data), stdin);
+
+//     fwrite(data, sizeof(char), strlen(data), fp);
+
+//     fclose(fp);
+
+//     printf("Data written successfully.\n");
+// }
+
+// void readFile()
+// {
+//     char filename[100];
+//     unsigned char buffer[1024];
+//     size_t bytesRead;
+
+//     FILE *fp;
+
+//     printf("Enter file name: ");
+//     scanf("%s", filename);
+
+//     fp = fopen(filename, "rb");
+
+//     if(fp == NULL)
+//     {
+//         printf("File not found!\n");
+//         return;
+//     }
+
+//     printf("\n----- File Content -----\n\n");
+
+//     while((bytesRead = fread(buffer, 1, sizeof(buffer), fp)) > 0)
+//     {
+//         fwrite(buffer, 1, bytesRead, stdout);
+//     }
+
+//     printf("\n");
+
+//     fclose(fp);
+// }
+
+// void updateFile()
+// {
+//     char filename[100];
+//     char data[100];
+//     long position;
+
+//     FILE *fp;
+
+//     printf("Enter file name: ");
+//     scanf("%s", filename);
+
+//     fp = fopen(filename, "rb+");
+
+//     if(fp == NULL)
+//     {
+//         printf("File not found!\n");
+//         return;
+//     }
+
+//     printf("Enter byte position: ");
+//     scanf("%ld", &position);
+
+//     getchar();
+
+//     printf("Enter new data: ");
+//     fgets(data, sizeof(data), stdin);
+
+//     fseek(fp, position, SEEK_SET);
+
+//     fwrite(data, sizeof(char), strlen(data), fp);
+
+//     fclose(fp);
+
+//     printf("File updated successfully.\n");
+// }
+
+// void copyFile()
+// {
+//     char source[100], destination[100];
+//     unsigned char buffer[1024];
+//     size_t bytesRead;
+
+//     FILE *src, *dest;
+
+//     printf("Enter source file: ");
+//     scanf("%s", source);
+
+//     printf("Enter destination file: ");
+//     scanf("%s", destination);
+
+//     src = fopen(source, "rb");
+
+//     if(src == NULL)
+//     {
+//         printf("Source file not found!\n");
+//         return;
+//     }
+
+//     dest = fopen(destination, "wb");
+
+//     if(dest == NULL)
+//     {
+//         printf("Cannot create destination file!\n");
+//         fclose(src);
+//         return;
+//     }
+
+//     while((bytesRead = fread(buffer, 1, sizeof(buffer), src)) > 0)
+//     {
+//         fwrite(buffer, 1, bytesRead, dest);
+//     }
+
+//     fclose(src);
+//     fclose(dest);
+
+//     printf("File copied successfully.\n");
+// }
+
+// void renameFile()
+// {
+//     char oldname[100], newname[100];
+
+//     printf("Enter current file name: ");
+//     scanf("%s", oldname);
+
+//     printf("Enter new file name: ");
+//     scanf("%s", newname);
+
+//     if(rename(oldname, newname) == 0)
+//         printf("File renamed successfully.\n");
+//     else
+//         printf("Rename failed!\n");
+// }
+
+// void deleteFile()
+// {
+//     char filename[100];
+
+//     printf("Enter file name: ");
+//     scanf("%s", filename);
+
+//     if(remove(filename) == 0)
+//         printf("File deleted successfully.\n");
+//     else
+//         printf("Delete failed!\n");
+// }
+
+// int main()
+// {
+//     int choice;
+
+//     while(1)
+//     {
+//         printf("\n===============================\n");
+//         printf(" BINARY FILE MANAGEMENT SYSTEM\n");
+//         printf("===============================\n");
+//         printf("1. Create File\n");
+//         printf("2. Write File\n");
+//         printf("3. Read File\n");
+//         printf("4. Update File\n");
+//         printf("5. Copy File\n");
+//         printf("6. Rename File\n");
+//         printf("7. Delete File\n");
+//         printf("8. Exit\n");
+
+//         printf("\nEnter your choice: ");
+//         scanf("%d", &choice);
+
+//         switch(choice)
+//         {
+//         case 1:
+//             createFile();
+//             break;
+
+//         case 2:
+//             writeFile();
+//             break;
+
+//         case 3:
+//             readFile();
+//             break;
+
+//         case 4:
+//             updateFile();
+//             break;
+
+//         case 5:
+//             copyFile();
+//             break;
+
+//         case 6:
+//             renameFile();
+//             break;
+
+//         case 7:
+//             deleteFile();
+//             break;
+
+//         case 8:
+//             printf("Program terminated.\n");
+//             return 0;
+
+//         default:
+//             printf("Invalid choice!\n");
+//         }
+//     }
+
+//     return 0;
+// }
